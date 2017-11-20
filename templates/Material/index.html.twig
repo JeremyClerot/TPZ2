@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} INDEX Material{% endblock %}
+
+{% block body %}
+    {% for mat in  materials %}
+        {{ mat.id }}  {{ mat.name }}  {{ mat.weight }}  </br>
+    {% endfor %}
+
+{% endblock %}

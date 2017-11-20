@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Information sur l'inventaire de {{ persons.name }} {% endblock %}
+
+{% block body %}
+    <h1> Information sur l'inventaire de {{ persons.name }}</h1>
+    {% for inv in  persons.inventories %}
+        Matière : {{ inv.material.name }}  Nombres : {{ inv.numberOfItem }} </br>
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} INDEX Person {% endblock %}
+
+{% block body %}
+    {% for User in  users %}
+        {{ User.id }}  {{ User.name }} {{ User.maxWeight }} </br>
+    {% endfor %}
+
+{% endblock %}

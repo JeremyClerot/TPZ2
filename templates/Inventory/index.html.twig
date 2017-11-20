@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Inventory {% endblock %}
+
+{% block body %}
+    {% for inv in  invs %}
+        Nom:  {{ inv.person.name }}   Mat : {{ inv.material.name }}  NbUnit : {{ inv.material.weight }}  NbItem : {{ inv.numberOfItem }} </br>
+    {% endfor %}
+
+{% endblock %}

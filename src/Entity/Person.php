@@ -1,9 +1,10 @@
 <?php
+
 /**
  * Created by PhpStorm.
- * User: jeremyclerot
- * Date: 13/11/2017
- * Time: 14:12
+ * User: antoine.lefevre
+ * Date: 13/11/17
+ * Time: 14:08
  */
 
 namespace App\Entity;
@@ -18,48 +19,41 @@ use Symfony\Component\Validator\Constraints\DateTime;
  */
 class Person
 {
+
     /**
      * @var int
-     * @ORM\Column(type="integer")
      * @ORM\Id()
      * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
      */
     protected $id;
+
     /**
      * @var string
-     * @ORM\Column(name="name",type="string",length=255)
-     *
+     * @ORM\Column(name="name",type="string")
      */
     protected $name;
+
     /**
      * @var int
-     * @ORM\Column(name="maxWeight",type="integer")
      *
+     * @ORM\Column(name="max_weight",type="integer")
      */
     protected $max_weight;
+
     /**
      *
-     * @ORM\OneToMany(targetEntity="Inventory",mappedBy="person")
-     *
+     * @ORM\OneToMany(targetEntity="Inventory", mappedBy="person")
      */
     protected $inventories;
+
     /**
-     * @return mixed
+     * Person constructor.
      */
-    public function getInventories()
-    {
-        return $this->inventories;
-    }
-    /**
-     * @param mixed $inventories
-     */
-    public function setInventories($inventories)
-    {
-        $this->inventories = $inventories;
-    }
     public function __construct()
     {
     }
+
     /**
      * @return int
      */
@@ -67,6 +61,7 @@ class Person
     {
         return $this->id;
     }
+
     /**
      * @param int $id
      */
@@ -74,6 +69,7 @@ class Person
     {
         $this->id = $id;
     }
+
     /**
      * @return string
      */
@@ -81,6 +77,7 @@ class Person
     {
         return $this->name;
     }
+
     /**
      * @param string $name
      */
@@ -88,6 +85,7 @@ class Person
     {
         $this->name = $name;
     }
+
     /**
      * @return int
      */
@@ -95,6 +93,7 @@ class Person
     {
         return $this->max_weight;
     }
+
     /**
      * @param int $max_weight
      */
@@ -102,8 +101,27 @@ class Person
     {
         $this->max_weight = $max_weight;
     }
+
     function __toString()
     {
         return $this->name;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getInventories()
+    {
+        return $this->inventories;
+    }
+
+    /**
+     * @param mixed $inventories
+     */
+    public function setInventories($inventories)
+    {
+        $this->inventories = $inventories;
+    }
+
+
 }

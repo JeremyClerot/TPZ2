@@ -1,9 +1,9 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: jeremyclerot
- * Date: 20/11/2017
- * Time: 13:26
+ * User: antoine.lefevre
+ * Date: 20/11/17
+ * Time: 13:20
  */
 
 namespace App\Entity;
@@ -12,34 +12,41 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
- * Class Material
+ * Class Person
  * @ORM\Table
  * @ORM\Entity
  */
 class Material
 {
+
     /**
      * @var int
-     * @ORM\Column(type="integer")
      * @ORM\Id()
      * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
      */
     protected $id;
+
     /**
      * @var string
-     * @ORM\Column(name="name",type="string",length=255)
-     *
+     * @ORM\Column(name="name",type="string")
      */
     protected $name;
+
     /**
      * @var float
-     * @ORM\Column(name="weight",type="float")
      *
+     * @ORM\Column(name="weight",type="float")
      */
     protected $weight;
+
+    /**
+     * Material constructor.
+     */
     public function __construct()
     {
     }
+
     /**
      * @return int
      */
@@ -47,6 +54,7 @@ class Material
     {
         return $this->id;
     }
+
     /**
      * @param int $id
      */
@@ -54,6 +62,7 @@ class Material
     {
         $this->id = $id;
     }
+
     /**
      * @return string
      */
@@ -61,6 +70,7 @@ class Material
     {
         return $this->name;
     }
+
     /**
      * @param string $name
      */
@@ -68,6 +78,7 @@ class Material
     {
         $this->name = $name;
     }
+
     /**
      * @return float
      */
@@ -75,6 +86,7 @@ class Material
     {
         return $this->weight;
     }
+
     /**
      * @param float $weight
      */
@@ -82,8 +94,11 @@ class Material
     {
         $this->weight = $weight;
     }
+
     function __toString()
     {
         return $this->name;
     }
+
+
 }

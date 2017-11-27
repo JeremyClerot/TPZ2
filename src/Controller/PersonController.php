@@ -1,60 +1,132 @@
 <?php
+
 /**
  * Created by PhpStorm.
- * User: jeremyclerot
- * Date: 13/11/2017
+ * User: antoine.lefevre
+ * Date: 13/11/17
  * Time: 14:16
  */
 
 namespace App\Controller;
 
+use App\Entity\Person;
 use App\Form\PersonType;
+use Doctrine\DBAL\Types\StringType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\RadioType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use App\Entity\Person;
-use Symfony\Component\Validator\Tests\Fixtures\Entity;
+use Doctrine\ORM\Persisters\Entity;
+use Symfony\Component\Translation\Tests\StringClass;
+use Symfony\Component\Validator\Constraints\Date;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 class PersonController extends Controller
 {
+
     /**
-     * @Route("/newPerson", name="App_Person_new")
+     * @Route("/new",name="new")
      */
     public function newAction(Request $request)
     {
-        $person = new Person();
-        $form = $this->createForm(PersonType::class,$person);
+
+        $person = new person;
+        $form = $this->createForm(PersonType::class, $person);
         $form->handleRequest($request);
-        if( $form->isSubmitted() && $form->isValid())
+
+        if($form->isValid() && $form->isSubmitted())
         {
             $em = $this->getDoctrine()->getManager();
             $em->persist($person);
             $em->flush();
-            $this->container->get('session')->getFlashBag()->add('infos','Nouveau person créé');
+            $this->addFlash('info','User bien enregistré');
         }
         return $this->render('Person/new.html.twig', array('form' => $form->createView()));
+
+
+        /*
+        $em = $this->getDoctrine()->getManager();
+        $person = new Person();
+        $person->setName('Antoine');
+        $person->setAge(10);
+        $person->setVisible(true);
+        $person->setCreatedAt(new \DateTime('now'));
+        $person->setColor('green');
+        $em->persist($person);
+        $em->flush();*/
+
+
     }
+
     /**
-     * @Route("/indexPerson", name="App_Person_Index")
+     * @Route("/edit",name="edit")
+     */
+    public function editAction(Request $request)
+    {
+        /*
+        $person = new person;
+        $form = $this->createFormBuilder($person)
+            ->add('name', TextType::class)
+            ->add('color', TextType::class)
+            ->add('age', NumberType::class)
+            ->add('createdAt', DateType::class)
+            ->add('visible', CheckboxType::class)
+            ->add('save', SubmitType::class, array('label' => "créer"))
+            ->getForm();
+        */
+        $em = $this->getDoctrine()->getManager();
+        $repo = $em->getRepository(Person::class);
+        $person = $repo->find(1);
+        $form = $this->createForm(PersonType::class, $person);
+        $form->handleRequest($request);
+
+        if($form->isValid() && $form->isSubmitted())
+        {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($person);
+            $em->flush();
+            $this->addFlash('info','User bien modifié');
+        }
+        return $this->render('Person/edit.html.twig', array('form' => $form->createView()));
+
+
+        /*
+        $em = $this->getDoctrine()->getManager();
+        $person = new Person();
+        $person->setName('Antoine');
+        $person->setAge(10);
+        $person->setVisible(true);
+        $person->setCreatedAt(new \DateTime('now'));
+        $person->setColor('green');
+        $em->persist($person);
+        $em->flush();*/
+
+
+    }
+
+    /**
+     * @Route("/index",name="index")
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
         $repo = $em->getRepository(Person::class);
-        $users = $repo->findAll();
-        return $this->render('Person/index.html.twig',array("users"=> $users));
+        $user = $repo->findAll();
+        return $this->render('Person/index.html.twig',array('User' => $user));
     }
+
     /**
-     * @Route("/show/{id}", name="App_Person_showInventaire")
+     * @Route("/show/{id}",name="show")
      */
     public function showAction(Person $person)
     {
-        return $this->render('Person/show.html.twig',array("persons"=> $person));
+        return $this->render('Person/show.html.twig',array('Person' => $person));
     }
+
+
 }

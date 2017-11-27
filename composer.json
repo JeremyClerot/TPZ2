@@ -5,13 +5,15 @@
         "php": "^7.0.8",
         "sensio/framework-extra-bundle": "^5.0",
         "symfony/console": "^3.3",
+        "symfony/form": "^3.3",
         "symfony/framework-bundle": "^3.3",
         "symfony/orm-pack": "^1.0",
         "symfony/translation": "^3.3",
         "symfony/twig-bundle": "^3.3",
         "symfony/validator": "^3.3",
         "symfony/web-server-bundle": "^3.3",
-        "symfony/yaml": "^3.3"
+        "symfony/yaml": "^3.3",
+        "twig/twig": "^2.4"
     },
     "require-dev": {
         "symfony/flex": "^1.0",
@@ -52,7 +54,7 @@
     },
     "extra": {
         "symfony": {
-            "id": "01BYTNH427D65NYPJ8VP2Y9TCW",
+            "id": "01BYTN8FQZ8NKYHMD5ZGESPRZH",
             "allow-contrib": false
         }
     }

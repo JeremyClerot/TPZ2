@@ -1,12 +1,14 @@
 <?php
+
 /**
  * Created by PhpStorm.
- * User: jeremyclerot
- * Date: 20/11/2017
- * Time: 14:03
+ * User: antoine.lefevre
+ * Date: 13/11/17
+ * Time: 14:08
  */
 
 namespace App\Entity;
+
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints\DateTime;
 
@@ -17,36 +19,39 @@ use Symfony\Component\Validator\Constraints\DateTime;
  */
 class Inventory
 {
+
     /**
      * @var int
-     * @ORM\Column(type="integer")
      * @ORM\Id()
      * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
      */
     protected $id;
+
     /**
-     *
-     * @ORM\ManyToOne(targetEntity="Person",inversedBy="inventories")
-     * @ORM\JoinColumn(name="person_id",referencedColumnName="id")
-     *
+     * @ORM\ManyToOne(targetEntity="Person", inversedBy="inventories")
+     * @ORM\JoinColumn(name="person_id", referencedColumnName="id")
      */
     protected $person;
+
+
     /**
-     *
      * @ORM\ManyToOne(targetEntity="Material")
-     * @ORM\JoinColumn(name="material_id",referencedColumnName="id")
-     *
+     * @ORM\JoinColumn(name="material_id", referencedColumnName="id")
      */
     protected $material;
+
     /**
-     * @var int
-     * @ORM\Column(name="number_of_item",type="integer")
-     *
+     * @ORM\Column(name="number_of_item", type="integer")
      */
     protected $numberOfItem;
-    public function __construct()
+
+    public function __contsruct(\Doctrine\ORM\EntityManagerInterface $em)
     {
+        $this->inventories = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->em = $em;
     }
+
     /**
      * @return int
      */
@@ -54,6 +59,7 @@ class Inventory
     {
         return $this->id;
     }
+
     /**
      * @param int $id
      */
@@ -61,6 +67,7 @@ class Inventory
     {
         $this->id = $id;
     }
+
     /**
      * @return mixed
      */
@@ -68,6 +75,7 @@ class Inventory
     {
         return $this->person;
     }
+
     /**
      * @param mixed $person
      */
@@ -75,6 +83,7 @@ class Inventory
     {
         $this->person = $person;
     }
+
     /**
      * @return mixed
      */
@@ -82,6 +91,7 @@ class Inventory
     {
         return $this->material;
     }
+
     /**
      * @param mixed $material
      */
@@ -89,18 +99,23 @@ class Inventory
     {
         $this->material = $material;
     }
+
     /**
-     * @return int
+     * @return mixed
      */
     public function getNumberOfItem()
     {
         return $this->numberOfItem;
     }
+
     /**
-     * @param int $numberOfItem
+     * @param mixed $numberOfItem
      */
     public function setNumberOfItem($numberOfItem)
     {
         $this->numberOfItem = $numberOfItem;
     }
+
+
+
 }

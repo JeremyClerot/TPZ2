@@ -1,61 +1,135 @@
 <?php
+
 /**
  * Created by PhpStorm.
- * User: jeremyclerot
- * Date: 20/11/2017
- * Time: 14:39
+ * User: antoine.lefevre
+ * Date: 13/11/17
+ * Time: 14:16
  */
 
 namespace App\Controller;
 
-use App\Calculate\Inventory as Calcul;
-use App\Entity\Inventory as Inventory;
+
+use App\Entity\Person;
+use App\Calculate\Calcul;
+use App\Entity\Material;
+use App\Entity\Inventory;
 use App\Form\InventoryType;
 use App\Form\MaterialType;
+use Doctrine\DBAL\Types\StringType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\RadioType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use App\Entity\Material;
-use Symfony\Component\Validator\Tests\Fixtures\Entity;
+use Doctrine\ORM\Persisters\Entity;
+use Symfony\Component\Translation\Tests\StringClass;
+use Symfony\Component\Validator\Constraints\Date;
+use Symfony\Component\Validator\Constraints\DateTime;
+
 class InventoryController extends Controller
 {
+
     /**
-     * @Route("/newInventory", name="App_inventory_new")
+     * @Route("/newInv",name="newInv")
      */
     public function newAction(Request $request)
     {
-        $inv= new Inventory();
-        $form = $this->createForm(InventoryType::class,$inv);
+
+        $inventory = $this->get(\App\Entity\Inventory::class);
+        $form = $this->createForm(InventoryType::class, $inventory);
         $form->handleRequest($request);
-        if( $form->isSubmitted() && $form->isValid() )
+        $em = $this->getDoctrine()->getManager();
+
+
+
+        if($form->isValid() && $form->isSubmitted())
         {
-            $em = $this->getDoctrine()->getManager();
-            $invent =  new Calcul($em);
-            $invent->setPerson($inv->getPerson());
-            $invent->setInventory($inv);
-            if( $invent->calcul())
+            $calcul= $this->get(\App\Calculate\Calcul::class);
+            $calcul->setPerson($inventory->getPerson());
+            $calcul->setInventory($inventory);
+            if($calcul->calcul())
             {
-                $em->persist($inv);
+                $em->persist($inventory);
                 $em->flush();
-                $this->container->get('session')->getFlashBag()->add('infos','Nouveau Inventory créé');
+                $this->addFlash('info','Inventaire bien enregistré');
             }
+
         }
         return $this->render('Inventory/new.html.twig', array('form' => $form->createView()));
+
+
+        /*
+        $em = $this->getDoctrine()->getManager();
+        $person = new Person();
+        $person->setName('Antoine');
+        $person->setAge(10);
+        $person->setVisible(true);
+        $person->setCreatedAt(new \DateTime('now'));
+        $person->setColor('green');
+        $em->persist($person);
+        $em->flush();*/
+
+
     }
+
     /**
-     * @Route("/indexInventory", name="App_inventory_Index")
+     * @Route("/editInv",name="editInv")
+     */
+    public function editAction(Request $request)
+    {
+        /*
+        $person = new person;
+        $form = $this->createFormBuilder($person)
+            ->add('name', TextType::class)
+            ->add('color', TextType::class)
+            ->add('age', NumberType::class)
+            ->add('createdAt', DateType::class)
+            ->add('visible', CheckboxType::class)
+            ->add('save', SubmitType::class, array('label' => "créer"))
+            ->getForm();
+        */
+        $em = $this->getDoctrine()->getManager();
+        $repo = $em->getRepository(Inventory::class);
+        $material=$repo->find(1);
+        $form = $this->createForm(InventoryType::class, $material);
+        $form->handleRequest($request);
+
+        if($form->isValid() && $form->isSubmitted())
+        {
+            $em->persist($material);
+            $em->flush();
+            $this->addFlash('info','Inventaire bien modifié');
+        }
+        return $this->render('Inventory/edit.html.twig', array('form' => $form->createView()));
+
+
+        /*
+        $em = $this->getDoctrine()->getManager();
+        $person = new Person();
+        $person->setName('Antoine');
+        $person->setAge(10);
+        $person->setVisible(true);
+        $person->setCreatedAt(new \DateTime('now'));
+        $person->setColor('green');
+        $em->persist($person);
+        $em->flush();*/
+
+
+    }
+
+    /**
+     * @Route("/indexInv",name="indexInv")
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
         $repo = $em->getRepository(Inventory::class);
-        $invs = $repo->findAll();
-        return $this->render('Inventory/index.html.twig',array("invs"=> $invs));
+        $inventory = $repo->findAll();
+        return $this->render('Inventory/index.html.twig',array('Inventory' => $inventory));
     }
 }

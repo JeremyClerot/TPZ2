@@ -7,18 +7,15 @@
  */
 
 namespace App\Entity;
-
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints\DateTime;
-
 /**
- * Class Person
+ * Class Item
  * @ORM\Table
  * @ORM\Entity
  */
-class Material
+class Item
 {
-
     /**
      * @var int
      * @ORM\Id()
@@ -26,27 +23,16 @@ class Material
      * @ORM\Column(type="integer")
      */
     protected $id;
-
     /**
      * @var string
      * @ORM\Column(name="name",type="string")
      */
     protected $name;
-
     /**
-     * @var float
-     *
-     * @ORM\Column(name="weight",type="float")
+     * @var string
+     * @ORM\Column(name="type_item",type="string")
      */
-    protected $weight;
-
-    /**
-     * Material constructor.
-     */
-    public function __construct()
-    {
-    }
-
+    protected $type_item;
     /**
      * @return int
      */
@@ -54,7 +40,6 @@ class Material
     {
         return $this->id;
     }
-
     /**
      * @param int $id
      */
@@ -62,7 +47,6 @@ class Material
     {
         $this->id = $id;
     }
-
     /**
      * @return string
      */
@@ -70,7 +54,6 @@ class Material
     {
         return $this->name;
     }
-
     /**
      * @param string $name
      */
@@ -78,27 +61,22 @@ class Material
     {
         $this->name = $name;
     }
-
     /**
-     * @return float
+     * @return string
      */
-    public function getWeight()
+    public function getTypeItem()
     {
-        return $this->weight;
+        return $this->type_item;
     }
-
     /**
-     * @param float $weight
+     * @param string $type_item
      */
-    public function setWeight($weight)
+    public function setTypeItem($type_item)
     {
-        $this->weight = $weight;
+        $this->type_item = $type_item;
     }
-
     function __toString()
     {
         return $this->name;
     }
-
-
 }

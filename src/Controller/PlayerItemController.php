@@ -9,8 +9,10 @@
 
 namespace App\Controller;
 
-use App\Entity\Material;
-use App\Form\MaterialType;
+use App\Entity\Person;
+use App\Entity\PlayerItem;
+use App\Form\PersonType;
+use App\Form\PlayerItemType;
 use Doctrine\DBAL\Types\StringType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -26,47 +28,12 @@ use Symfony\Component\Translation\Tests\StringClass;
 use Symfony\Component\Validator\Constraints\Date;
 use Symfony\Component\Validator\Constraints\DateTime;
 
-class MaterialController extends Controller
+class PlayeritemController extends Controller
 {
-
     /**
-     * @Route("/newMat",name="newMat")
+     * @Route("/newPlayerItem",name="newPlayerItem")
      */
     public function newAction(Request $request)
-    {
-
-        $material = new material;
-        $form = $this->createForm(MaterialType::class, $material);
-        $form->handleRequest($request);
-
-        if($form->isValid() && $form->isSubmitted())
-        {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($material);
-            $em->flush();
-            $this->addFlash('info','Material bien enregistré');
-        }
-        return $this->render('Material/new.html.twig', array('form' => $form->createView()));
-
-
-        /*
-        $em = $this->getDoctrine()->getManager();
-        $person = new Person();
-        $person->setName('Antoine');
-        $person->setAge(10);
-        $person->setVisible(true);
-        $person->setCreatedAt(new \DateTime('now'));
-        $person->setColor('green');
-        $em->persist($person);
-        $em->flush();*/
-
-
-    }
-
-    /**
-     * @Route("/editMat",name="editMat")
-     */
-    public function editAction(Request $request)
     {
         /*
         $person = new person;
@@ -79,22 +46,17 @@ class MaterialController extends Controller
             ->add('save', SubmitType::class, array('label' => "créer"))
             ->getForm();
         */
-        $em = $this->getDoctrine()->getManager();
-        $repo = $em->getRepository(Material::class);
-        $material=$repo->find(1);
-        $form = $this->createForm(MaterialType::class, $material);
+        $playerItem = $this->get(\App\Entity\PlayerItem::class);
+        $form = $this->createForm(PlayerItemType::class, $playerItem);
         $form->handleRequest($request);
-
         if($form->isValid() && $form->isSubmitted())
         {
-
-            $em->persist($material);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($playerItem);
             $em->flush();
-            $this->addFlash('info','Material bien modifié');
+            $this->addFlash('info','user bien enregistré');
         }
-        return $this->render('Material/edit.html.twig', array('form' => $form->createView()));
-
-
+        return $this->render('PlayerItem/new.html.twig', array('form' => $form->createView()));
         /*
         $em = $this->getDoctrine()->getManager();
         $person = new Person();
@@ -105,18 +67,5 @@ class MaterialController extends Controller
         $person->setColor('green');
         $em->persist($person);
         $em->flush();*/
-
-
-    }
-
-    /**
-     * @Route("/indexMat",name="indexMat")
-     */
-    public function indexAction()
-    {
-        $em = $this->getDoctrine()->getManager();
-        $repo = $em->getRepository(Material::class);
-        $material = $repo->findAll();
-        return $this->render('Material/index.html.twig',array('Material' => $material));
     }
 }

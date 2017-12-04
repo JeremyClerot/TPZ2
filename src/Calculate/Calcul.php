@@ -20,7 +20,7 @@ class Calcul
 
     private $inventory;
     /**
-     * Inventory constructor.
+     * PlayerItem constructor.
      * @param $entityManager
      */
     public function __construct(\Doctrine\ORM\EntityManagerInterface $entityManager)

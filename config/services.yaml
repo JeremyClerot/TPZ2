@@ -28,9 +28,5 @@ services:
     App\Controller\:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
-    App\Calculate\Calcul:
-        arguments: ['@doctrine.orm.entity_manager']
-        public: true
-        autowire: false
-    App\Entity\Inventory:
-        public: true
+    App\Entity\Player:
+            public: true

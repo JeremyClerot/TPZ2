@@ -35,45 +35,27 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return $this->mergeDefaults(array_replace($matches, array('_route' => '_twig_error_test')), array (  '_controller' => 'twig.controller.preview_error:previewErrorPageAction',  '_format' => 'html',));
         }
 
-        if (0 === strpos($pathinfo, '/new')) {
-            // App_inventory_new
-            if ('/newInventory' === $pathinfo) {
-                return array (  '_controller' => 'App\\Controller\\InventoryController::newAction',  '_route' => 'App_inventory_new',);
+        if (0 === strpos($pathinfo, '/player')) {
+            // new
+            if ('/player/new' === $pathinfo) {
+                return array (  '_controller' => 'App\\Controller\\PlayerController::newAction',  '_route' => 'new',);
             }
 
-            // App_material_new
-            if ('/newMaterial' === $pathinfo) {
-                return array (  '_controller' => 'App\\Controller\\MaterialController::newAction',  '_route' => 'App_material_new',);
+            // edit
+            if ('/player/edit' === $pathinfo) {
+                return array (  '_controller' => 'App\\Controller\\PlayerController::editAction',  '_route' => 'edit',);
             }
 
-            // App_Person_new
-            if ('/newPerson' === $pathinfo) {
-                return array (  '_controller' => 'App\\Controller\\PersonController::newAction',  '_route' => 'App_Person_new',);
+            // index
+            if ('/player/index' === $pathinfo) {
+                return array (  '_controller' => 'App\\Controller\\PlayerController::indexAction',  '_route' => 'index',);
             }
 
-        }
-
-        elseif (0 === strpos($pathinfo, '/index')) {
-            // App_inventory_Index
-            if ('/indexInventory' === $pathinfo) {
-                return array (  '_controller' => 'App\\Controller\\InventoryController::indexAction',  '_route' => 'App_inventory_Index',);
+            // show
+            if (0 === strpos($pathinfo, '/player/show') && preg_match('#^/player/show/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'show')), array (  '_controller' => 'App\\Controller\\PlayerController::showAction',));
             }
 
-            // App_material_Index
-            if ('/indexMaterial' === $pathinfo) {
-                return array (  '_controller' => 'App\\Controller\\MaterialController::indexAction',  '_route' => 'App_material_Index',);
-            }
-
-            // App_Person_Index
-            if ('/indexPerson' === $pathinfo) {
-                return array (  '_controller' => 'App\\Controller\\PersonController::indexAction',  '_route' => 'App_Person_Index',);
-            }
-
-        }
-
-        // App_Person_showInventaire
-        if (0 === strpos($pathinfo, '/show') && preg_match('#^/show/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'App_Person_showInventaire')), array (  '_controller' => 'App\\Controller\\PersonController::showAction',));
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

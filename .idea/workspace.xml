@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a87eba2b-2ff5-4a93-82e3-04f4d3adbed6" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/composer.phar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.env.dist" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/console" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/bundles.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/packages/dev/routing.yaml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/packages/doctrine_migrations.yaml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/packages/framework.yaml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/packages/prod/doctrine.yaml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/packages/routing.yaml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/packages/test/framework.yaml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/packages/translation.yaml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/routes.yaml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/routes/dev/twig.yaml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/services.yaml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/translations/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/index.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Calculate/Calcul.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controller/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controller/HomePageController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controller/ItemController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controller/PersonController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controller/PlayerItemController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Entity/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Entity/Item.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Entity/Person.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Entity/PlayerItem.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Form/ItemType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Form/PersonType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Form/PlayerItemType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Kernel.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Migrations/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Repository/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/symfony.lock" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/Homepage/homepage.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/Item/edit.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/Item/index.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/Item/new.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/Player/edit.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/Player/index.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/Player/new.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/Player/show.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/PlayerItem/new.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/base.html.twig" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/templates/index.html.twig" />
+        <option value="$PROJECT_DIR$/templates/Person/new.html.twig" />
+        <option value="$PROJECT_DIR$/templates/Material/new.html.twig" />
+        <option value="$PROJECT_DIR$/templates/Inventory/new.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/MaterialController.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Material.php" />
+        <option value="$PROJECT_DIR$/src/Form/MaterialType.php" />
+        <option value="$PROJECT_DIR$/templates/Inventory/index.html.twig" />
+        <option value="$PROJECT_DIR$/templates/Material/index.html.twig" />
+        <option value="$PROJECT_DIR$/templates/Person/index.html.twig" />
+        <option value="$PROJECT_DIR$/templates/Person/show.html.twig" />
+        <option value="$PROJECT_DIR$/src/Calculate/Inventory.php" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/config/packages/framework.yaml" />
+        <option value="$PROJECT_DIR$/src/Entity/Inventory.php" />
+        <option value="$PROJECT_DIR$/config/services.yaml" />
+        <option value="$PROJECT_DIR$/src/Controller/InventoryController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/PlayerController.php" />
+        <option value="$PROJECT_DIR$/templates/base.html.twig" />
+        <option value="$PROJECT_DIR$/src/Form/InventoryType.php" />
+        <option value="$PROJECT_DIR$/templates/Default/index.html.twig" />
+        <option value="$PROJECT_DIR$/templates/Item/index.html.twig" />
+        <option value="$PROJECT_DIR$/templates/Item/new.html.twig" />
+        <option value="$PROJECT_DIR$/templates/Player/index.html.twig" />
+        <option value="$PROJECT_DIR$/templates/Player/show.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/HomePageController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/ItemController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/PersonController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/PlayerItemController.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Item.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Person.php" />
+        <option value="$PROJECT_DIR$/src/Entity/PlayerItem.php" />
+        <option value="$PROJECT_DIR$/src/Form/ItemType.php" />
+        <option value="$PROJECT_DIR$/src/Form/PersonType.php" />
+        <option value="$PROJECT_DIR$/src/Form/PlayerItemType.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="TPZ2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TPZ2" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="TPZ2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TPZ2" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a87eba2b-2ff5-4a93-82e3-04f4d3adbed6" name="Default" comment="" />
+      <created>1512391011125</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1512391011125</updated>
+      <workItem from="1512391014151" duration="131000" />
+      <workItem from="1512391228672" duration="147000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="283000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3319027" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2636816" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Controller/PlayerItemController.php" />
+    <entry file="file://$PROJECT_DIR$/src/Controller/ItemController.php" />
+    <entry file="file://$PROJECT_DIR$/src/Entity/PlayerItem.php" />
+    <entry file="file://$PROJECT_DIR$/src/Form/ItemType.php" />
+    <entry file="file://$PROJECT_DIR$/src/Controller/PlayerItemController.php" />
+    <entry file="file://$PROJECT_DIR$/src/Entity/PlayerItem.php" />
+    <entry file="file://$PROJECT_DIR$/src/Form/PlayerItemType.php" />
+    <entry file="file://$PROJECT_DIR$/src/Entity/Person.php" />
+    <entry file="file://$PROJECT_DIR$/src/Controller/PersonController.php" />
+    <entry file="file://$PROJECT_DIR$/templates/Player/new.html.twig" />
+    <entry file="file://$PROJECT_DIR$/templates/Player/index.html.twig" />
+    <entry file="file://$PROJECT_DIR$/src/Form/PersonType.php" />
+    <entry file="file://$PROJECT_DIR$/src/Entity/Person.php" />
+    <entry file="file://$PROJECT_DIR$/src/Controller/PersonController.php" />
+    <entry file="file://$PROJECT_DIR$/templates/Player/new.html.twig" />
+    <entry file="file://$PROJECT_DIR$/templates/Player/index.html.twig" />
+    <entry file="file://$PROJECT_DIR$/src/Form/PersonType.php" />
+    <entry file="file://$PROJECT_DIR$/src/Entity/Person.php" />
+    <entry file="file://$PROJECT_DIR$/src/Controller/PersonController.php" />
+    <entry file="file://$PROJECT_DIR$/templates/Player/new.html.twig" />
+    <entry file="file://$PROJECT_DIR$/templates/Player/index.html.twig" />
+    <entry file="file://$PROJECT_DIR$/src/Form/PersonType.php" />
+    <entry file="file://$PROJECT_DIR$/src/Entity/Person.php" />
+    <entry file="file://$PROJECT_DIR$/src/Controller/PersonController.php" />
+    <entry file="file://$PROJECT_DIR$/config/packages/doctrine.yaml" />
+    <entry file="file://$PROJECT_DIR$/.env.dist" />
+    <entry file="file://$PROJECT_DIR$/templates/Player/new.html.twig" />
+    <entry file="file://$PROJECT_DIR$/config/packages/framework.yaml" />
+    <entry file="file://$PROJECT_DIR$/src/Calculate/Inventory.php" />
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="54" lean-forward="false" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/PlayerItem/index.html.twig" />
+    <entry file="file://$PROJECT_DIR$/config/routes.yaml" />
+    <entry file="file://$PROJECT_DIR$/config/services.yaml" />
+    <entry file="file://$PROJECT_DIR$/templates/base.html.twig" />
+    <entry file="file://$PROJECT_DIR$/templates/Homepage/homepage.html.twig" />
+    <entry file="file://$PROJECT_DIR$/templates/Item/index.html.twig" />
+    <entry file="file://$PROJECT_DIR$/templates/Item/new.html.twig" />
+    <entry file="file://$PROJECT_DIR$/templates/Player/edit.html.twig" />
+    <entry file="file://$PROJECT_DIR$/templates/Player/index.html.twig" />
+    <entry file="file://$PROJECT_DIR$/templates/Player/show.html.twig" />
+    <entry file="file://$PROJECT_DIR$/templates/PlayerItem/new.html.twig" />
+    <entry file="file://$PROJECT_DIR$/src/Controller/HomePageController.php" />
+    <entry file="file://$PROJECT_DIR$/src/Controller/ItemController.php" />
+    <entry file="file://$PROJECT_DIR$/src/Controller/PersonController.php" />
+    <entry file="file://$PROJECT_DIR$/src/Controller/PlayerItemController.php" />
+    <entry file="file://$PROJECT_DIR$/src/Entity/Item.php" />
+    <entry file="file://$PROJECT_DIR$/src/Entity/Person.php" />
+    <entry file="file://$PROJECT_DIR$/src/Entity/PlayerItem.php" />
+    <entry file="file://$PROJECT_DIR$/src/Form/ItemType.php" />
+    <entry file="file://$PROJECT_DIR$/src/Form/PersonType.php" />
+    <entry file="file://$PROJECT_DIR$/src/Form/PlayerItemType.php" />
+  </component>
+</project>
